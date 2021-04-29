@@ -1,9 +1,4 @@
-# Hahn applicatonProcess application
-
-## Frontend built With
-
-- [Aurelia](http://aurelia.io/docs/tutorials/creating-a-todo-app#setup) - The web framework used
-- [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/download) - UI library
+# Ticket Api
 
 ## Backend built With
 
@@ -11,26 +6,20 @@
 
 ### Server
 
-### Installing App
+### Installing Api
 
 Get git source code :
 
 ```sh
-$ git clone https://github.com/ronnysuero/Hahn.ApplicatonProcess.Application.git
-```
-
-Restore DotNET and Npm packages :
-
-```sh
-$ cd Hahn.ApplicatonProcess.Application
-$ dotnet build Ticket.Web/Ticket.Web.csproj /property:GenerateFullPaths=true /consoleloggerparameters:NoSummary
+$ git clone https://github.com/ronnysuero/Ticket.Api
 ```
 
 Create docker image :
 
 ```sh
-$ docker build -t ticketweb -f Ticket.Web/Dockerfile .
-$ docker run --rm -d  -p 5000:5000/tcp ticketweb
+$ cd Ticket.Api
+$ docker-compose build
+$ docker-compose up
 ```
 
 Go to the browser: `http://localhost:5000/` and that's it.
