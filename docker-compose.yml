@@ -1,0 +1,19 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  ticketweb:
+    image: ticketweb
+    build:
+      context: .
+      dockerfile: Ticket.Web/Dockerfile
+    ports:
+      - "5000:5000/tcp"
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Password@12345"
+    ports:
+      - "1433:1433"
